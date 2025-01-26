@@ -51,7 +51,7 @@
     "generate_hex": true,
     "libraries": [
         {
-            "branch": "0a27a812d1964c9476d54d77fc3b875b2658d1f5",
+            "branch": "225db9dda5dde5697797bfb9ea2cf8e340b43901",
             "name": "codal-core",
             "type": "git",
             "url": "https://github.com/KierPalin/codal-core"
