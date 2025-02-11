@@ -79,8 +79,8 @@ namespace codal
 // Max packet size is configurable, so ensure maximum value is not exceeded
 // TODO: Update this value once issue codal-microbit-v2#383 is resolved
 // https://github.com/lancaster-university/codal-microbit-v2/issues/383
-#if MICROBIT_RADIO_MAX_PACKET_SIZE > 250
-    #error "MICROBIT_RADIO_MAX_PACKET_SIZE cannot be larger than 250 bytes"
+#if MICROBIT_RADIO_MAX_PACKET_SIZE > 1025
+    #error "MICROBIT_RADIO_MAX_PACKET_SIZE cannot be larger than 1025 bytes"
 #endif
 
 // Known Protocol Numbers
