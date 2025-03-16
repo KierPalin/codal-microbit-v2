@@ -51,7 +51,7 @@
     "generate_hex": true,
     "libraries": [
         {
-            "branch": "double-buffer-removal",
+            "branch": "master",
             "name": "codal-core",
             "type": "git",
             "url": "https://github.com/KierPalin/codal-core"
