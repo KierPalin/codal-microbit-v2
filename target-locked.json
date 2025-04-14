@@ -57,10 +57,10 @@
             "url": "https://github.com/lancaster-university/codal-core"
         },
         {
-            "branch": "8802eb49140e0389e535cb6160d9080efd951ba7",
+            "branch": "123ee46f7630d8aaf2c62658937eb4dac836fe31",
             "name": "codal-nrf52",
             "type": "git",
-            "url": "https://github.com/lancaster-university/codal-nrf52"
+            "url": "https://github.com/kierpalin/codal-nrf52"
         },
         {
             "branch": "d41d5c7ebe53a1d01935e61d4ffa891e5112e119",
