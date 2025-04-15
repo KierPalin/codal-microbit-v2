@@ -307,6 +307,7 @@ typedef enum {
 #define ID_PIN_P18       (DEVICE_ID_IO_P0 + 18)
 #define ID_PIN_P19       (DEVICE_ID_IO_P0 + 19)
 #define ID_PIN_P20       (DEVICE_ID_IO_P0 + 20)
+#define ID_PIN_P21       (DEVICE_ID_IO_P0 + 21)
 #define ID_PIN_LOGO      (DEVICE_ID_IO_P0 + 21)
 #define ID_PIN_SPEAKER   (DEVICE_ID_IO_P0 + 22)
 #define ID_PIN_RUNMIC    (DEVICE_ID_IO_P0 + 23)
@@ -380,6 +381,7 @@ namespace codal
             NRF52Pin          P16;          // P1_02
             NRF52Pin          P19;          // P0_26
             NRF52Pin          P20;          // P1_00
+            NRF52Pin          P21;          // P0_21
 
             // Other exposed pins
             NRF52Pin          logo;         // P1_04
