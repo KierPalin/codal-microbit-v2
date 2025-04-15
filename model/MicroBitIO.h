@@ -380,11 +380,8 @@ namespace codal
             NRF52Pin          P16;          // P1_02
             NRF52Pin          P19;          // P0_26
             NRF52Pin          P20;          // P0_26
-            NRF52Pin          P28;          // P1_00
-            NRF52Pin          P29;          // P1_00
-            NRF52Pin          P30;          // P1_00
-            NRF52Pin          P31;          // P1_00
-
+            NRF52Pin          P21;          // P1_00
+  
             // Other exposed pins
             NRF52Pin          logo;         // P1_04
 
