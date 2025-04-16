@@ -116,7 +116,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     buttonA.setPull(PullMode::None);
     buttonB.setPull(PullMode::None);
 
-    savedStatus = ManagedBuffer(pins + 1);// + 1
+    savedStatus = ManagedBuffer(pins + 1);
     savedStatus[pins] = 0;
 }
 
@@ -127,7 +127,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 #else
 #define PORT (NRF_P0)
 #define PIN (name)
-#define NUM_PINS 32
+#define NUM_PINS 33 // 32
 #endif
 
 /**
