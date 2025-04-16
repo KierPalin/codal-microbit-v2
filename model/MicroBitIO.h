@@ -385,6 +385,9 @@ namespace codal
             // Other exposed pins
             NRF52Pin          logo;         // P1_04
 
+            // WDS:
+            NRF52Pin          P29;          // P0_29
+
             // Internal Pins
             NRF52Pin          speaker;      // P0_00
             NRF52Pin          runmic;       // P0_20
