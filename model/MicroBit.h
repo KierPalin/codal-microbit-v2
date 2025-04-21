@@ -150,7 +150,7 @@ namespace codal
             NRF52Pin*                   ledRowPins[5];
             // NRF52Pin*                   ledColPins[5];
             // const MatrixMap             ledMatrixMap;
-            MicroBitDisplay             display;
+            // MicroBitDisplay             display;
             Button                      buttonA;
             Button                      buttonB;
             MultiButton                 buttonAB;
