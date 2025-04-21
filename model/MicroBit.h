@@ -326,8 +326,8 @@ using namespace codal;
 
 #define MIC_DEVICE NRF52ADCChannel*
 #define MIC_INIT \
-    : microphone(uBit.audio.mic) \
-    , level(* uBit.audio.levelSPL)
+    // : microphone(uBit.audio.mic) \
+    // , level(* uBit.audio.levelSPL)
 
 #define MIC_ENABLE //uBit.audio.deactivateLevelSPL(); //uBit.io.runmic.setDigitalValue(1); uBit.io.runmic.setHighDrive(true); microphone->setGain(7,0)
 
