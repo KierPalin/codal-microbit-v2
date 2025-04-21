@@ -47,7 +47,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     P0(ID_PIN_P0, P0_02, PIN_CAPABILITY_AD),
     P1(ID_PIN_P1, P0_03, PIN_CAPABILITY_AD),
     P2(ID_PIN_P2, P0_04, PIN_CAPABILITY_AD),
-    P3(ID_PIN_P3, P0_31, PIN_CAPABILITY_AD),
+    // P3(ID_PIN_P3, P0_31, PIN_CAPABILITY_AD),
     P4(ID_PIN_P4, P0_28, PIN_CAPABILITY_AD),
     P5(ID_PIN_P5, P0_14, PIN_CAPABILITY_AD),
     P6(ID_PIN_P6, P1_5, PIN_CAPABILITY_AD),
@@ -90,7 +90,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // Aliases
     col1(P4),
     col2(P7),
-    col3(P3),
+    // col3(P3),
     col4(P6),
     col5(P10),
     buttonA(P5),

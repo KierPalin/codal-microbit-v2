@@ -365,7 +365,7 @@ namespace codal
             NRF52Pin          P0;           // P0_02
             NRF52Pin          P1;           // P0_03
             NRF52Pin          P2;           // P0_04
-            NRF52Pin          P3;           // P0_31
+            // NRF52Pin          P3;           // P0_31
             NRF52Pin          P4;           // P0_28
             NRF52Pin          P5;           // P0_14
             NRF52Pin          P6;           // P1_05
@@ -406,7 +406,7 @@ namespace codal
             // Aliases
             NRF52Pin&         col1;
             NRF52Pin&         col2;
-            NRF52Pin&         col3;
+            // NRF52Pin&         col3;
             NRF52Pin&         col4;
             NRF52Pin&         col5;
             NRF52Pin&         buttonA;
