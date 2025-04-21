@@ -310,7 +310,7 @@ int MicroBit::init()
   */
 void MicroBit::onP0ListenerRegisteredEvent(Event evt)
 {
-    audio.setPinEnabled(false);
+    // audio.setPinEnabled(false);
 }
 
 /**
@@ -365,13 +365,13 @@ void MicroBit::onListenerRegisteredEvent(Event evt)
             // The level detector uses lazy instantiation, we just need to read the data once to start it running.
             //audio.level->getValue();
             // The level detector requires that we enable constant listening, otherwise no events will be emitted.
-            audio.levelSPL->activateForEvents( true );
+            // audio.levelSPL->activateForEvents( true );
             break;
 
         case DEVICE_ID_MICROPHONE:
             // A listener has been registered for the level detector SPL.
             // The level detector SPL uses lazy instantiation, we just need to read the data once to start it running.
-            audio.levelSPL->getValue();
+            // audio.levelSPL->getValue();
             break;
     }
 }
