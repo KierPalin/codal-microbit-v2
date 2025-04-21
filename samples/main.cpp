@@ -26,15 +26,15 @@ main()
 
     while(1)
     {
-        uBit.display.print(smile);
+        // uBit.display.print(smile);
         uBit.sleep(1000);
-        uBit.display.print(wink);
+        // uBit.display.print(wink);
         uBit.sleep(500);
-        uBit.display.print(smile);
+        // uBit.display.print(smile);
         uBit.sleep(1000);
-        uBit.display.clear();
+        // uBit.display.clear();
 
-        uBit.display.scroll("Hello World");
+        // uBit.display.scroll("Hello World");
     }
 }
 

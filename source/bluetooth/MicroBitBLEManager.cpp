@@ -794,7 +794,7 @@ int MicroBitBLEManager::advertiseEddystoneUid(const char* uid_namespace, const c
  *
  * @code
  * // initiate pairing mode
- * bleManager.pairingMode(uBit.display, uBit.buttonA);
+ * bleManager.pairingMode(// uBit.display, uBit.buttonA);
  * @endcode
  */
 void MicroBitBLEManager::pairingMode(MicroBitDisplay &display, Button &authorisationButton)

@@ -150,7 +150,7 @@ class MicroBitBLEManager : public CodalComponent
      *
      * @code
      * // initiate pairing mode
-     * bleManager.pairingMode(uBit.display, uBit.buttonA);
+     * bleManager.pairingMode(// uBit.display, uBit.buttonA);
      * @endcode
      */
     void pairingMode(MicroBitDisplay &display, Button &authorisationButton);
