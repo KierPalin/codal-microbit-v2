@@ -335,7 +335,7 @@ typedef enum {
 #define ID_PIN_P46       (DEVICE_ID_IO_P0 + 46)
 #define ID_PIN_P47       (DEVICE_ID_IO_P0 + 47)
 #define ID_PIN_P48       (DEVICE_ID_IO_P0 + 48)
-#define ID_PIN_P48       (DEVICE_ID_IO_P0 + 49)
+#define ID_PIN_P49       (DEVICE_ID_IO_P0 + 49)
 
 //
 // Saved status values to restore GPIO configurations after deep sleep
