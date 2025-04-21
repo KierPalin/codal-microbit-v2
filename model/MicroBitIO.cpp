@@ -47,18 +47,17 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     P0(ID_PIN_P0, P0_02, PIN_CAPABILITY_AD),
     P1(ID_PIN_P1, P0_03, PIN_CAPABILITY_AD),
     P2(ID_PIN_P2, P0_04, PIN_CAPABILITY_AD),
-    // P3(ID_PIN_P3, P0_31, PIN_CAPABILITY_AD),
+    P3(ID_PIN_P3, P0_31, PIN_CAPABILITY_AD),
     P4(ID_PIN_P4, P0_28, PIN_CAPABILITY_AD),
     P5(ID_PIN_P5, P0_14, PIN_CAPABILITY_AD),
-    // P6(ID_PIN_P6, P1_5, PIN_CAPABILITY_AD),
-    // P7(ID_PIN_P7, P0_11, PIN_CAPABILITY_AD),
+    P6(ID_PIN_P6, P1_5, PIN_CAPABILITY_AD),
+    P7(ID_PIN_P7, P0_11, PIN_CAPABILITY_AD),
     P8(ID_PIN_P8, P0_10, PIN_CAPABILITY_AD),
     P9(ID_PIN_P9, P0_09, PIN_CAPABILITY_AD),
     P10(ID_PIN_P10, P0_30, PIN_CAPABILITY_AD),
     P11(ID_PIN_P11, P0_23, PIN_CAPABILITY_AD),
     P12(ID_PIN_P12, P0_12, PIN_CAPABILITY_AD),
     P13(ID_PIN_P13, P0_17, PIN_CAPABILITY_AD),
-    // P13(ID_PIN_P13, P0_29, PIN_CAPABILITY_AD),
     P14(ID_PIN_P14, P0_01, PIN_CAPABILITY_AD),
     P15(ID_PIN_P15, P0_13, PIN_CAPABILITY_AD),
     P16(ID_PIN_P16, P1_02, PIN_CAPABILITY_AD),
@@ -67,11 +66,6 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 
     // Other exposed pins
     logo(ID_PIN_LOGO, P1_04, PIN_CAPABILITY_AD),
-
-
-    // WDS:
-    P29(ID_PIN_P48, P0_29, PIN_CAPABILITY_AD),
-    P31(ID_PIN_P49, P0_31, PIN_CAPABILITY_AD),
 
     // Internal Pins
     speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
@@ -89,31 +83,28 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     irq1(ID_PIN_IRQ1, P0_25, PIN_CAPABILITY_AD),
 
     // Aliases
-    // col1(P4),
-    // col2(P7),
-    // col3(P3),
-    // col4(P6),
-    // col5(P10),
+    col1(P4),
+    col2(P7),
+    col3(P3),
+    col4(P6),
+    col5(P10),
     buttonA(P5),
     buttonB(P11)
 {
-    pins = 34; // consider decreasing
+    pins = 33;
     NRF52Pin::adc = &a;
     NRF52Pin::touchSensor = &s;
 
     // Ensure all internal pins are configured with no pull resistors.
-    for (int i=19; i<pins; i++) // 19 -> 18
+    for (int i=19; i<pins; i++)
         pin[i].setPull(PullMode::None);
 
-    P29.setPull(PullMode::None);
-    P31.setPull(PullMode::None);
-
     // Ensure all internal multiplexed pins are configured with no pull resistors.
-    // col1.setPull(PullMode::None);
-    // col2.setPull(PullMode::None);
-    // col3.setPull(PullMode::None);
-    // col4.setPull(PullMode::None);
-    // col5.setPull(PullMode::None);
+    col1.setPull(PullMode::None);
+    col2.setPull(PullMode::None);
+    col3.setPull(PullMode::None);
+    col4.setPull(PullMode::None);
+    col5.setPull(PullMode::None);
     buttonA.setPull(PullMode::None);
     buttonB.setPull(PullMode::None);
 
@@ -128,7 +119,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 #else
 #define PORT (NRF_P0)
 #define PIN (name)
-#define NUM_PINS 33 // 32
+#define NUM_PINS 32
 #endif
 
 /**

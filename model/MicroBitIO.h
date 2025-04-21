@@ -334,8 +334,6 @@ typedef enum {
 #define ID_PIN_P45       (DEVICE_ID_IO_P0 + 45)
 #define ID_PIN_P46       (DEVICE_ID_IO_P0 + 46)
 #define ID_PIN_P47       (DEVICE_ID_IO_P0 + 47)
-#define ID_PIN_P48       (DEVICE_ID_IO_P0 + 48)
-#define ID_PIN_P49       (DEVICE_ID_IO_P0 + 49)
 
 //
 // Saved status values to restore GPIO configurations after deep sleep
@@ -366,11 +364,11 @@ namespace codal
             NRF52Pin          P0;           // P0_02
             NRF52Pin          P1;           // P0_03
             NRF52Pin          P2;           // P0_04
-            // NRF52Pin          P3;           // P0_31
+            NRF52Pin          P3;           // P0_31
             NRF52Pin          P4;           // P0_28
             NRF52Pin          P5;           // P0_14
-            // NRF52Pin          P6;           // P1_05
-            // NRF52Pin          P7;           // P0_11
+            NRF52Pin          P6;           // P1_05
+            NRF52Pin          P7;           // P0_11
             NRF52Pin          P8;           // P0_10
             NRF52Pin          P9;           // P0_09
             NRF52Pin          P10;          // P0_30
@@ -385,10 +383,6 @@ namespace codal
 
             // Other exposed pins
             NRF52Pin          logo;         // P1_04
-
-            // WDS:
-            NRF52Pin          P29;          // P0_29
-            NRF52Pin          P31;          // P0_31
 
             // Internal Pins
             NRF52Pin          speaker;      // P0_00
@@ -406,11 +400,11 @@ namespace codal
             NRF52Pin          irq1;         // P0_25
 
             // Aliases
-            // NRF52Pin&         col1;
-            // NRF52Pin&         col2;
-            // NRF52Pin&         col3;
-            // NRF52Pin&         col4;
-            // NRF52Pin&         col5;
+            NRF52Pin&         col1;
+            NRF52Pin&         col2;
+            NRF52Pin&         col3;
+            NRF52Pin&         col4;
+            NRF52Pin&         col5;
             NRF52Pin&         buttonA;
             NRF52Pin&         buttonB;
 
@@ -450,4 +444,4 @@ namespace codal
     };
 }
 
-#endif
+#endifendif
