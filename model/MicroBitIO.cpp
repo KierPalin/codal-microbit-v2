@@ -82,6 +82,11 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     usbRx(ID_PIN_USBRX, MICROBIT_PIN_UART_RX, PIN_CAPABILITY_DIGITAL),
     irq1(ID_PIN_IRQ1, P0_25, PIN_CAPABILITY_AD),
 
+
+    //WDS
+    P29(ID_PIN_P46, P0_26, PIN_CAPABILITY_AD),
+    P31(ID_PIN_P47, P0_31, PIN_CAPABILITY_AD),
+
     // Aliases
     // col1(P4),
     // col2(P7),
