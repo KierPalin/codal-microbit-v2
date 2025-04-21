@@ -149,7 +149,7 @@ namespace codal
             MicroBitStorage             storage;                // Persistent key value store
             NRF52Pin*                   ledRowPins[5];
             // NRF52Pin*                   ledColPins[5];
-            const MatrixMap             ledMatrixMap;
+            // const MatrixMap             ledMatrixMap;
             MicroBitDisplay             display;
             Button                      buttonA;
             Button                      buttonB;
