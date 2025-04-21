@@ -110,7 +110,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // Ensure all internal multiplexed pins are configured with no pull resistors.
     col1.setPull(PullMode::None);
     col2.setPull(PullMode::None);
-    col3.setPull(PullMode::None);
+    // col3.setPull(PullMode::None);
     col4.setPull(PullMode::None);
     col5.setPull(PullMode::None);
     buttonA.setPull(PullMode::None);
