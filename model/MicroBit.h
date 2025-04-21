@@ -159,7 +159,7 @@ namespace codal
             MicroBitThermometer         thermometer;
             Accelerometer&              accelerometer;
             Compass&                    compass;
-            MicroBitCompassCalibrator   compassCalibrator;
+            // MicroBitCompassCalibrator   compassCalibrator;
             // MicroBitAudio               audio;
             MicroBitLog                 log;
 
