@@ -84,7 +84,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 
 
     //WDS
-    P29(ID_PIN_P46, P0_26, PIN_CAPABILITY_AD),
+    P29(ID_PIN_P46, P0_29, PIN_CAPABILITY_AD),
     P31(ID_PIN_P47, P0_31, PIN_CAPABILITY_AD),
 
     // Aliases
@@ -103,6 +103,9 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // Ensure all internal pins are configured with no pull resistors.
     for (int i=19; i<pins; i++)
         pin[i].setPull(PullMode::None);
+
+    P29.setPull(PullMode::None);
+    P31.setPull(PullMode::None);
 
     // Ensure all internal multiplexed pins are configured with no pull resistors.
     // col1.setPull(PullMode::None);
