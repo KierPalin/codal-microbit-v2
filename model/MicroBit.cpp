@@ -88,7 +88,7 @@ MicroBit::MicroBit() :
     thermometer(),
     accelerometer(MicroBitAccelerometer::autoDetect(_i2c)),
     compass(MicroBitCompass::autoDetect(_i2c)),
-    compassCalibrator(compass, accelerometer, display, storage),
+    // compassCalibrator(compass, accelerometer, display, storage),
     // audio(io.P0, io.speaker, adc, io.microphone, io.runmic),
     log(flash, power, serial)
 {
