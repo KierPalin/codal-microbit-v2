@@ -71,6 +71,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 
     // WDS:
     P29(ID_PIN_P48, P0_29, PIN_CAPABILITY_AD),
+    P31(ID_PIN_P49, P0_31, PIN_CAPABILITY_AD),
 
     // Internal Pins
     speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),

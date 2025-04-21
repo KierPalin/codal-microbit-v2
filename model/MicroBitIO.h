@@ -335,6 +335,7 @@ typedef enum {
 #define ID_PIN_P46       (DEVICE_ID_IO_P0 + 46)
 #define ID_PIN_P47       (DEVICE_ID_IO_P0 + 47)
 #define ID_PIN_P48       (DEVICE_ID_IO_P0 + 48)
+#define ID_PIN_P48       (DEVICE_ID_IO_P0 + 49)
 
 //
 // Saved status values to restore GPIO configurations after deep sleep
@@ -387,6 +388,7 @@ namespace codal
 
             // WDS:
             NRF52Pin          P29;          // P0_29
+            NRF52Pin          P31;          // P0_31
 
             // Internal Pins
             NRF52Pin          speaker;      // P0_00
