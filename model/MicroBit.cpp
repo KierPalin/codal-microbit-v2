@@ -135,11 +135,11 @@ MicroBit::MicroBit() :
     for (NRF52Pin *p : ledRowPins)
         p->setHighDrive(true);
 
-    for (NRF52Pin *p : ledColPins)
-        p->setHighDrive(true);
+    // for (NRF52Pin *p : ledColPins)
+        // p->setHighDrive(true);
 
     // Bring up internal speaker as high drive.
-    io.speaker.setHighDrive(true);
+    // io.speaker.setHighDrive(true);
 }
 
 /**
