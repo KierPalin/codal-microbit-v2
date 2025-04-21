@@ -400,11 +400,11 @@ namespace codal
             NRF52Pin          irq1;         // P0_25
 
             // Aliases
-            NRF52Pin&         col1;
-            NRF52Pin&         col2;
-            NRF52Pin&         col3;
-            NRF52Pin&         col4;
-            NRF52Pin&         col5;
+            // NRF52Pin&         col1;
+            // NRF52Pin&         col2;
+            // NRF52Pin&         col3;
+            // NRF52Pin&         col4;
+            // NRF52Pin&         col5;
             NRF52Pin&         buttonA;
             NRF52Pin&         buttonB;
 
