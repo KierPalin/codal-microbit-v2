@@ -77,7 +77,7 @@ MicroBit::MicroBit() :
     internalFlash(MICROBIT_STORAGE_PAGE, 1, MICROBIT_CODEPAGESIZE),
     storage(internalFlash, 0),
     ledRowPins{&io.row1, &io.row2, &io.row3, &io.row4, &io.row5},
-    ledColPins{&io.col1, &io.col2, &io.col1, &io.col4, &io.col5}, // Changed col3 to col1
+    // ledColPins{&io.col1, &io.col2, &io.col1, &io.col4, &io.col5}, // Changed col3 to col1
     ledMatrixMap{ 5, 5, 5, 5, (Pin**)ledRowPins, (Pin**)ledColPins, ledMatrixPositions},
     display(ledMatrixMap),
     buttonA(io.P5, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW),
