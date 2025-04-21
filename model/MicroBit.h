@@ -160,7 +160,7 @@ namespace codal
             Accelerometer&              accelerometer;
             Compass&                    compass;
             MicroBitCompassCalibrator   compassCalibrator;
-            MicroBitAudio               audio;
+            // MicroBitAudio               audio;
             MicroBitLog                 log;
 
 
