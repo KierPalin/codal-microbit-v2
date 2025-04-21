@@ -101,7 +101,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     NRF52Pin::touchSensor = &s;
 
     // Ensure all internal pins are configured with no pull resistors.
-    for (int i=19; i<pins; i++)
+    for (int i=19; i<pins; i++) // Maybe update?
         pin[i].setPull(PullMode::None);
 
     P29.setPull(PullMode::None);
