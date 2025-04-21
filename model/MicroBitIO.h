@@ -367,13 +367,13 @@ namespace codal
             NRF52Pin          P1;           // P0_03
             NRF52Pin          P2;           // P0_04
             // NRF52Pin          P3;           // P0_31
-            NRF52Pin          P4;           // P0_28
+            // NRF52Pin          P4;           // P0_28
             NRF52Pin          P5;           // P0_14
-            NRF52Pin          P6;           // P1_05
-            NRF52Pin          P7;           // P0_11
+            // NRF52Pin          P6;           // P1_05
+            // NRF52Pin          P7;           // P0_11
             NRF52Pin          P8;           // P0_10
             NRF52Pin          P9;           // P0_09
-            NRF52Pin          P10;          // P0_30
+            // NRF52Pin          P10;          // P0_30
             NRF52Pin          P11;          // P0_23
             NRF52Pin          P12;          // P0_12
             NRF52Pin          P13;          // P0_17
@@ -406,11 +406,11 @@ namespace codal
             NRF52Pin          irq1;         // P0_25
 
             // Aliases
-            NRF52Pin&         col1;
-            NRF52Pin&         col2;
+            // NRF52Pin&         col1;
+            // NRF52Pin&         col2;
             // NRF52Pin&         col3;
-            NRF52Pin&         col4;
-            NRF52Pin&         col5;
+            // NRF52Pin&         col4;
+            // NRF52Pin&         col5;
             NRF52Pin&         buttonA;
             NRF52Pin&         buttonB;
 
