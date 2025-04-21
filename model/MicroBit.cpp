@@ -273,7 +273,7 @@ int MicroBit::init()
             MicroBitUtilityService::createShared( *ble, messageBus, storage, log);
 #endif
             // Enter pairing mode, using the LED matrix for any necessary pairing operations
-            bleManager.pairingMode(display, buttonA);
+            // bleManager.pairingMode(display, buttonA);
         }
     }
 #endif
