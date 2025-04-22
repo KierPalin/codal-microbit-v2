@@ -388,11 +388,10 @@ namespace codal
             NRF52Pin          P21;         
             NRF52Pin          P22;         
             NRF52Pin          P23;         
-            // NRF52Pin          P24;
 
             // Internal Pins
-            NRF52Pin          speaker;      // P0_00
-            NRF52Pin          runmic;       // P0_20
+            // NRF52Pin          speaker;      // P0_00
+            // NRF52Pin          runmic;       // P0_20
             NRF52Pin          microphone;   // P0_05
             NRF52Pin          sda;          // P0_16
             NRF52Pin          scl;          // P0_08
