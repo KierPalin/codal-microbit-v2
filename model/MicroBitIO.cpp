@@ -68,8 +68,8 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     logo(ID_PIN_LOGO, P1_04, PIN_CAPABILITY_AD),
 
     // Internal Pins
-    speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
-    runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
+    // speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
+    // runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
     microphone(ID_PIN_MIC, P0_05, PIN_CAPABILITY_AD),
     sda(ID_PIN_SDA, P0_16, PIN_CAPABILITY_AD),
     scl(ID_PIN_SCL, P0_08, PIN_CAPABILITY_AD),
@@ -84,6 +84,8 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
 
 
     //WDS
+    P00(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD),
+    P20(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD),
     P29(ID_PIN_P46, P0_29, PIN_CAPABILITY_AD),
     P31(ID_PIN_P47, P0_31, PIN_CAPABILITY_AD),
 
@@ -104,6 +106,8 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     for (int i=19; i<pins; i++) // Maybe update?
         pin[i].setPull(PullMode::None);
 
+    P00.setPull(PullMode::None);
+    P20.setPull(PullMode::None);
     P29.setPull(PullMode::None);
     P31.setPull(PullMode::None);
 
