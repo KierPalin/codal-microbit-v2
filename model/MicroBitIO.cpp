@@ -106,7 +106,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     for (int i=19; i<pins; i++) // Maybe update?
         pin[i].setPull(PullMode::None);
 
-    // P21.setPull(PullMode::None);
+    P21.setPull(PullMode::None);
     // P22.setPull(PullMode::None);
     P23.setPull(PullMode::None);
     P24.setPull(PullMode::None);
