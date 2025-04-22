@@ -117,8 +117,8 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // col3.setPull(PullMode::None);
     // col4.setPull(PullMode::None);
     // col5.setPull(PullMode::None);
-    buttonA.setPull(PullMode::None);
-    buttonB.setPull(PullMode::None);
+    // buttonA.setPull(PullMode::None);
+    // buttonB.setPull(PullMode::None);
 
     savedStatus = ManagedBuffer(pins + 1);
     savedStatus[pins] = 0;
