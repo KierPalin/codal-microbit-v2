@@ -87,7 +87,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // P21(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD),
     // P22(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD),
     P23(ID_PIN_P46, P0_29, PIN_CAPABILITY_AD),
-    // P24(ID_PIN_P47, P0_31, PIN_CAPABILITY_AD),
+    P24(ID_PIN_P47, P0_31, PIN_CAPABILITY_AD),
 
     // Aliases
     // col1(P4),
@@ -109,7 +109,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     // P21.setPull(PullMode::None);
     // P22.setPull(PullMode::None);
     P23.setPull(PullMode::None);
-    // P24.setPull(PullMode::None);
+    P24.setPull(PullMode::None);
 
     // Ensure all internal multiplexed pins are configured with no pull resistors.
     // col1.setPull(PullMode::None);
