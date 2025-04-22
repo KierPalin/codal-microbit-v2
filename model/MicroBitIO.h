@@ -388,7 +388,7 @@ namespace codal
             // WDS:
             NRF52Pin          P21;         
             // NRF52Pin          P22;         
-            // NRF52Pin          P23;         
+            NRF52Pin          P23;         
             // NRF52Pin          P24;
 
             // Internal Pins
