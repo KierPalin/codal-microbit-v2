@@ -68,8 +68,8 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     logo(ID_PIN_LOGO, P1_04, PIN_CAPABILITY_AD),
 
     // Internal Pins
-    // speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
-    // runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
+    speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
+    runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
     microphone(ID_PIN_MIC, P0_05, PIN_CAPABILITY_AD),
     sda(ID_PIN_SDA, P0_16, PIN_CAPABILITY_AD),
     scl(ID_PIN_SCL, P0_08, PIN_CAPABILITY_AD),
@@ -98,7 +98,7 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     buttonA(P5),
     buttonB(P11)
 {
-    pins = 34; // 33 -> 35
+    pins = 33; // 33 -> 35
     NRF52Pin::adc = &a;
     NRF52Pin::touchSensor = &s;
 
