@@ -390,8 +390,6 @@ namespace codal
             NRF52Pin          P23;         
 
             // Internal Pins
-            // NRF52Pin          speaker;      // P0_00
-            // NRF52Pin          runmic;       // P0_20
             NRF52Pin          microphone;   // P0_05
             NRF52Pin          sda;          // P0_16
             NRF52Pin          scl;          // P0_08
@@ -403,16 +401,6 @@ namespace codal
             NRF52Pin          usbTx;
             NRF52Pin          usbRx;
             NRF52Pin          irq1;         // P0_25
-
-            // Aliases
-            // NRF52Pin&         col1;
-            // NRF52Pin&         col2;
-            // NRF52Pin&         col3;
-            // NRF52Pin&         col4;
-            // NRF52Pin&         col5;
-            // NRF52Pin&         buttonA;
-            // NRF52Pin&         buttonB;
-
 
             /**
              * Constructor.

@@ -68,8 +68,6 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     logo(ID_PIN_LOGO, P1_04, PIN_CAPABILITY_AD),
 
     // Internal Pins
-    // speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
-    // runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
     microphone(ID_PIN_MIC, P0_05, PIN_CAPABILITY_AD),
     sda(ID_PIN_SDA, P0_16, PIN_CAPABILITY_AD),
     scl(ID_PIN_SCL, P0_08, PIN_CAPABILITY_AD),
@@ -82,20 +80,10 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     usbRx(ID_PIN_USBRX, MICROBIT_PIN_UART_RX, PIN_CAPABILITY_DIGITAL),
     irq1(ID_PIN_IRQ1, P0_25, PIN_CAPABILITY_AD),
 
-
     //WDS
     P21(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD),
     P22(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD),
     P23(ID_PIN_P44, P0_29, PIN_CAPABILITY_AD)
-
-    // Aliases
-    // col1(P4),
-    // col2(P7),
-    // col3(P3),
-    // col4(P6),
-    // col5(P10),
-    // buttonA(P5),
-    // buttonB(P11)
 {
     pins = 33; // 33 -> 35
     NRF52Pin::adc = &a;
@@ -108,15 +96,6 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     P21.setPull(PullMode::None);
     P22.setPull(PullMode::None);
     P23.setPull(PullMode::None);
-
-    // Ensure all internal multiplexed pins are configured with no pull resistors.
-    // col1.setPull(PullMode::None);
-    // col2.setPull(PullMode::None);
-    // col3.setPull(PullMode::None);
-    // col4.setPull(PullMode::None);
-    // col5.setPull(PullMode::None);
-    // buttonA.setPull(PullMode::None);
-    // buttonB.setPull(PullMode::None);
 
     savedStatus = ManagedBuffer(pins + 1);
     savedStatus[pins] = 0;
