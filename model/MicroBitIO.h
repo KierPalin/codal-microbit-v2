@@ -411,8 +411,8 @@ namespace codal
             // NRF52Pin&         col3;
             // NRF52Pin&         col4;
             // NRF52Pin&         col5;
-            NRF52Pin&         buttonA;
-            NRF52Pin&         buttonB;
+            // NRF52Pin&         buttonA;
+            // NRF52Pin&         buttonB;
 
 
             /**
