@@ -80,9 +80,13 @@ MicroBit::MicroBit() :
     // ledColPins{&io.col1, &io.col2, &io.col3, &io.col4, &io.col5},
     // ledMatrixMap{ 5, 5, 5, 5, (Pin**)ledRowPins, (Pin**)ledColPins, ledMatrixPositions},
     // display(ledMatrixMap),
+
+    // We're not using these:
     buttonA(io.P5, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW),
     buttonB(io.P11, DEVICE_ID_BUTTON_B, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW),
     buttonAB(DEVICE_ID_BUTTON_A, DEVICE_ID_BUTTON_B, DEVICE_ID_BUTTON_AB),
+
+
     logo(io.logo, touchSensor, CAPTOUCH_DEFAULT_CALIBRATION),
     radio(),
     thermometer(),

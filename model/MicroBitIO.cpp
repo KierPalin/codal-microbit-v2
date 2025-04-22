@@ -80,22 +80,27 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     usbRx(ID_PIN_USBRX, MICROBIT_PIN_UART_RX, PIN_CAPABILITY_DIGITAL),
     irq1(ID_PIN_IRQ1, P0_25, PIN_CAPABILITY_AD),
 
-    //WDS
-    P21(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD),
-    P22(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD),
-    P23(ID_PIN_P44, P0_29, PIN_CAPABILITY_AD)
+    // WDS
+    P21(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD), // RIGHT BTN
+    P22(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD), // LEFT BTN
+    P23(ID_PIN_P44, P0_29, PIN_CAPABILITY_AD)  // LCD SPI DC
 {
-    pins = 33; // 33 -> 35
+    pins = 33;
     NRF52Pin::adc = &a;
     NRF52Pin::touchSensor = &s;
 
     // Ensure all internal pins are configured with no pull resistors.
-    for (int i=19; i<pins; i++) // Maybe update?
+    for (int i=19; i<pins; i++) 
         pin[i].setPull(PullMode::None);
-
-    P21.setPull(PullMode::None);
-    P22.setPull(PullMode::None);
+    
+    // Used by DC:
     P23.setPull(PullMode::None);
+
+    // Used by the WDS buttons:
+    P1.setPull(PullMode::Up);  // BOT
+    P2.setPull(PullMode::Up);  // TOP
+    P21.setPull(PullMode::Up); // RIGHT
+    P22.setPull(PullMode::Up); // LEFT
 
     savedStatus = ManagedBuffer(pins + 1);
     savedStatus[pins] = 0;
