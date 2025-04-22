@@ -384,10 +384,9 @@ namespace codal
             // Other exposed pins
             NRF52Pin          logo;         // P1_04
 
-
             // WDS:
             NRF52Pin          P21;         
-            // NRF52Pin          P22;         
+            NRF52Pin          P22;         
             NRF52Pin          P23;         
             // NRF52Pin          P24;
 
