@@ -97,10 +97,10 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     P23.setPull(PullMode::None);
 
     // Used by the WDS buttons:
-    P1.setPull(PullMode::Up);  // BOT
-    P2.setPull(PullMode::Up);  // TOP
-    P21.setPull(PullMode::Up); // RIGHT
-    P22.setPull(PullMode::Up); // LEFT
+    P1.setPull(PullMode::Down);  // BOT
+    P2.setPull(PullMode::Down);  // TOP
+    P21.setPull(PullMode::Down); // RIGHT
+    P22.setPull(PullMode::Down); // LEFT
 
     savedStatus = ManagedBuffer(pins + 1);
     savedStatus[pins] = 0;
