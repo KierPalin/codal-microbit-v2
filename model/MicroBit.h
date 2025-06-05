@@ -154,9 +154,9 @@ namespace codal
             NRF52FlashManager           internalFlash; 
             MicroBitStorage             storage;                // Persistent key value store
             NRF52Pin*                   ledRowPins[5];
-            NRF52Pin*                   ledColPins[5];
-            const MatrixMap             ledMatrixMap;
-            MicroBitDisplay             display;
+            // NRF52Pin*                   ledColPins[5];
+            // const MatrixMap             ledMatrixMap;
+            // MicroBitDisplay             display;
             Button                      buttonA;
             Button                      buttonB;
             MultiButton                 buttonAB;
@@ -165,8 +165,8 @@ namespace codal
             MicroBitThermometer         thermometer;
             Accelerometer&              accelerometer;
             Compass&                    compass;
-            MicroBitCompassCalibrator   compassCalibrator;
-            MicroBitAudio               audio;
+            // MicroBitCompassCalibrator   compassCalibrator;
+            // MicroBitAudio               audio;
             MicroBitLog                 log;
 
 
@@ -333,8 +333,8 @@ using namespace codal;
 
 #define MIC_DEVICE NRF52ADCChannel*
 #define MIC_INIT \
-    : microphone(uBit.audio.mic) \
-    , level(* uBit.audio.levelSPL)
+    // : microphone(uBit.audio.mic) \
+    // , level(* uBit.audio.levelSPL)
 
 #define MIC_ENABLE //uBit.audio.deactivateLevelSPL(); //uBit.io.runmic.setDigitalValue(1); uBit.io.runmic.setHighDrive(true); microphone->setGain(7,0)
 

@@ -69,8 +69,6 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     logo(ID_PIN_LOGO, P1_04, PIN_CAPABILITY_AD),
 
     // Internal Pins
-    speaker(ID_PIN_SPEAKER, P0_00, PIN_CAPABILITY_AD),
-    runmic(ID_PIN_RUNMIC, P0_20, PIN_CAPABILITY_AD),
     microphone(ID_PIN_MIC, P0_05, PIN_CAPABILITY_AD),
     sda(ID_PIN_SDA, P0_16, PIN_CAPABILITY_AD),
     scl(ID_PIN_SCL, P0_08, PIN_CAPABILITY_AD),
@@ -83,22 +81,17 @@ MicroBitIO::MicroBitIO(NRF52ADC &a, TouchSensor &s) :
     usbRx(ID_PIN_USBRX, MICROBIT_PIN_UART_RX, PIN_CAPABILITY_DIGITAL),
     irq1(ID_PIN_IRQ1, P0_25, PIN_CAPABILITY_AD),
 
-    // Aliases
-    col1(P4),
-    col2(P7),
-    col3(P3),
-    col4(P6),
-    col5(P10),
-    buttonA(P5),
-    buttonB(P11)
+    // WDS
+    P21(ID_PIN_P44, P0_00, PIN_CAPABILITY_AD), // RIGHT BTN
+    P22(ID_PIN_P45, P0_20, PIN_CAPABILITY_AD), // LEFT BTN
+    P23(ID_PIN_P44, P0_29, PIN_CAPABILITY_AD)  // LCD SPI DC
 {
     NRF52Pin::adc = &a;
     NRF52Pin::touchSensor = &s;
 
     // Ensure all internal pins are configured with no pull resistors.
-    for (int i=19; i<pins; i++)
+    for (int i=19; i<pins; i++) 
         pin[i].setPull(PullMode::None);
-
     // Last array entry stores the saved/not-saved status
     savedStatus[pins] = 0;
 }

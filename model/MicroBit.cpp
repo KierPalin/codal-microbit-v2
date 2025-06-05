@@ -81,15 +81,16 @@ MicroBit::MicroBit() :
     ledMatrixMap{ 5, 5, 5, 5, (Pin**)ledRowPins, (Pin**)ledColPins, ledMatrixPositions},
     display(ledMatrixMap),
     buttonA(io.P5, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::None),
-    buttonB(io.P11, DEVICE_ID_BUTTON_B, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::None),
     buttonAB(DEVICE_ID_BUTTON_A, DEVICE_ID_BUTTON_B, DEVICE_ID_BUTTON_AB),
+
+
     logo(io.logo, touchSensor, CAPTOUCH_DEFAULT_CALIBRATION),
     radio(),
     thermometer(),
     accelerometer(MicroBitAccelerometer::autoDetect(_i2c)),
     compass(MicroBitCompass::autoDetect(_i2c)),
-    compassCalibrator(compass, accelerometer, display, storage),
-    audio(io.P0, io.speaker, adc, io.microphone, io.runmic),
+    // compassCalibrator(compass, accelerometer, display, storage),
+    // audio(io.P0, io.speaker, adc, io.microphone, io.runmic),
     log(flash, power, serial)
 {
     // Clear our status
@@ -135,11 +136,11 @@ MicroBit::MicroBit() :
     for (NRF52Pin *p : ledRowPins)
         p->setHighDrive(true);
 
-    for (NRF52Pin *p : ledColPins)
-        p->setHighDrive(true);
+    // for (NRF52Pin *p : ledColPins)
+        // p->setHighDrive(true);
 
     // Bring up internal speaker as high drive.
-    io.speaker.setHighDrive(true);
+    // io.speaker.setHighDrive(true);
 }
 
 /**
@@ -246,7 +247,7 @@ int MicroBit::init()
 
     while (((triple_reset || (buttonA.isPressed() && buttonB.isPressed())) && i<25) || RebootMode != NULL || flashIncomplete != NULL)
     {
-        display.image.setPixelValue(x,y,255);
+        // display.image.setPixelValue(x,y,255);
         sleep(triple_reset ? 10 : 20);
         i++; x++;
 
@@ -274,7 +275,7 @@ int MicroBit::init()
             MicroBitUtilityService::createShared( *ble, messageBus, storage, log);
 #endif
             // Enter pairing mode, using the LED matrix for any necessary pairing operations
-            bleManager.pairingMode(display, buttonA);
+            // bleManager.pairingMode(display, buttonA);
         }
     }
 #endif
@@ -310,7 +311,7 @@ int MicroBit::init()
   */
 void MicroBit::onP0ListenerRegisteredEvent(Event evt)
 {
-    audio.setPinEnabled(false);
+    // audio.setPinEnabled(false);
 }
 
 /**
@@ -371,7 +372,7 @@ void MicroBit::onListenerRegisteredEvent(Event evt)
         case DEVICE_ID_MICROPHONE:
             // A listener has been registered for the level detector SPL.
             // The level detector SPL uses lazy instantiation, we just need to read the data once to start it running.
-            audio.levelSPL->getValue();
+            // audio.levelSPL->getValue();
             break;
     }
 }
@@ -495,4 +496,3 @@ uint32_t *microbit_top_of_flash()
 {
     return (uint32_t *) MICROBIT_TOP_OF_FLASH;
 }
-
