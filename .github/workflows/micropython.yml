@@ -16,6 +16,8 @@ jobs:
         with:
           repository: 'microbit-foundation/micropython-microbit-v2'
           submodules: 'true'
+          # FIXME: Temporarily check out the audio-recording branch for testing
+          ref: 'audio-recording'
       - name: Manually clone microbit-v2-samples in the lib/codal/libraries folder
         uses: actions/checkout@v4
         with:
