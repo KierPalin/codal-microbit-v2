@@ -282,9 +282,6 @@ typedef enum {
 // Unused
 #define MICROBIT_PIN_BUTTON_RESET                   -1
 
-// Total number of available pins in MicroBitIO, excluding aliases
-#define MICROBIT_PINS_TOTAL                         33
-
 //
 // Component IDs for each pin.
 // The can be user defined, but uniquely identify a pin when using the eventing APIs/
@@ -358,7 +355,7 @@ namespace codal
     {
         public:
             // Number of pins in use.
-            const int         pins;
+            int               pins;
 
             // Enumeration of all pins, ordered by edge connector.
             NRF52Pin          pin[0];
@@ -421,7 +418,7 @@ namespace codal
             virtual int deepSleepCallback( deepSleepCallbackReason reason, deepSleepCallbackData *data) override;
 
         private:
-            uint8_t savedStatus[MICROBIT_PINS_TOTAL + 1];
+            ManagedBuffer     savedStatus;
 
             /**
              * Record current state of pins, so we can return the configuration to the same state later.
