@@ -59,7 +59,7 @@
     #ifdef SOFTDEVICE_PRESENT
         #define MICROBIT_STORAGE_PAGE           ( MICROBIT_BOOTLOADER_ADDRESS - MICROBIT_CODEPAGESIZE * 3)
     #else
-        #define MICROBIT_STORAGE_PAGE           ( 0x0007F000 )
+        #define MICROBIT_STORAGE_PAGE           ( 0x7F000 )
     #endif
 #endif
 
@@ -68,11 +68,7 @@
 #endif
 
 #ifndef MICROBIT_DEFAULT_SCRATCH_PAGE
-    #ifdef SOFTDEVICE_PRESENT
-        #define MICROBIT_DEFAULT_SCRATCH_PAGE   ( MICROBIT_BOOTLOADER_ADDRESS - MICROBIT_CODEPAGESIZE * 4)
-    #else
-        #define MICROBIT_DEFAULT_SCRATCH_PAGE   ( 0x0007E000 )
-    #endif
+    #define MICROBIT_DEFAULT_SCRATCH_PAGE   ( MICROBIT_BOOTLOADER_ADDRESS - MICROBIT_CODEPAGESIZE * 4)
 #endif
 
 #ifndef MICROBIT_STORAGE_SCRATCH_PAGE
@@ -91,13 +87,6 @@
     #endif
 #endif
 
-#ifndef MICROBIT_TOP_OF_FLASH
-    #ifdef SOFTDEVICE_PRESENT
-        #define MICROBIT_TOP_OF_FLASH   ( 0x00073000 )
-    #else
-        #define MICROBIT_TOP_OF_FLASH   ( 0x0007E000 )
-    #endif
-#endif
 
 #ifndef MICROBIT_APP_REGION_END
     #define MICROBIT_APP_REGION_END         ( MICROBIT_DEFAULT_SCRATCH_PAGE)

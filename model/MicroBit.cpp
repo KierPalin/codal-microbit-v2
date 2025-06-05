@@ -77,10 +77,13 @@ MicroBit::MicroBit() :
     internalFlash(MICROBIT_STORAGE_PAGE, 1, MICROBIT_CODEPAGESIZE),
     storage(internalFlash, 0),
     ledRowPins{&io.row1, &io.row2, &io.row3, &io.row4, &io.row5},
-    ledColPins{&io.col1, &io.col2, &io.col3, &io.col4, &io.col5},
-    ledMatrixMap{ 5, 5, 5, 5, (Pin**)ledRowPins, (Pin**)ledColPins, ledMatrixPositions},
-    display(ledMatrixMap),
-    buttonA(io.P5, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW, PullMode::None),
+    // ledColPins{&io.col1, &io.col2, &io.col3, &io.col4, &io.col5},
+    // ledMatrixMap{ 5, 5, 5, 5, (Pin**)ledRowPins, (Pin**)ledColPins, ledMatrixPositions},
+    // display(ledMatrixMap),
+
+    // We're not using these:
+    buttonA(io.P5, DEVICE_ID_BUTTON_A, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW),
+    buttonB(io.P11, DEVICE_ID_BUTTON_B, DEVICE_BUTTON_ALL_EVENTS, ACTIVE_LOW),
     buttonAB(DEVICE_ID_BUTTON_A, DEVICE_ID_BUTTON_B, DEVICE_ID_BUTTON_AB),
 
 
@@ -123,7 +126,7 @@ MicroBit::MicroBit() :
     #endif
 
     // uBit.logo is a Capacitive TouchButton, ensure the io pin is set capacitive as well
-    io.logo.isTouched(TouchMode::Capacitative);
+    io.logo.status |= IO_STATUS_CAPACITATIVE_TOUCH;
 
     // Add pullup resisitor to IRQ line (it's floating ACTIVE LO)
     io.irq1.getDigitalValue();
@@ -202,7 +205,6 @@ int MicroBit::init()
     // which saves processor time, memeory and battery life.
     messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, DEVICE_EVT_ANY, this, &MicroBit::onListenerRegisteredEvent);
     messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, ID_PIN_P0, this, &MicroBit::onP0ListenerRegisteredEvent, MESSAGE_BUS_LISTENER_IMMEDIATE);
-    messageBus.listen(DEVICE_ID_MESSAGE_BUS_IGNORED, DEVICE_EVT_ANY, this, &MicroBit::onListenerRemovedEvent);
 
 #if CONFIG_ENABLED(DMESG_SERIAL_DEBUG) && DEVICE_DMESG_BUFFER_SIZE > 0
     codal_dmesg_set_flush_fn(microbit_dmesg_flush);
@@ -303,6 +305,7 @@ int MicroBit::init()
     // before any user code begins running.
     
     sleep(10);
+
     return DEVICE_OK;
 }
 
@@ -366,7 +369,7 @@ void MicroBit::onListenerRegisteredEvent(Event evt)
             // The level detector uses lazy instantiation, we just need to read the data once to start it running.
             //audio.level->getValue();
             // The level detector requires that we enable constant listening, otherwise no events will be emitted.
-            audio.levelSPL->listenerAdded();
+            // audio.levelSPL->activateForEvents( true );
             break;
 
         case DEVICE_ID_MICROPHONE:
@@ -377,22 +380,6 @@ void MicroBit::onListenerRegisteredEvent(Event evt)
     }
 }
 
-/**
-  * A listener to perform actions as a result of Message Bus reflection.
-  *
-  * This callback is triggered upon a MessageBus listneer being removed.
-  * We may wish to perform cleanup operations as a result, etc.
-  *
-  */
-void MicroBit::onListenerRemovedEvent(Event evt)
-{
-    switch(evt.value)
-    {
-        case DEVICE_ID_SYSTEM_LEVEL_DETECTOR:
-        audio.levelSPL->listenerRemoved();
-        break;
-    }
-}
 
 /**
  * Perfom scheduler idle
@@ -490,9 +477,4 @@ void microbit_dmesg_flush()
     }
 #endif
 #endif
-}
-
-uint32_t *microbit_top_of_flash()
-{
-    return (uint32_t *) MICROBIT_TOP_OF_FLASH;
 }
