@@ -201,7 +201,7 @@ int MicroBit::init()
     // which saves processor time, memeory and battery life.
     messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, DEVICE_EVT_ANY, this, &MicroBit::onListenerRegisteredEvent);
     messageBus.listen(DEVICE_ID_MESSAGE_BUS_LISTENER, ID_PIN_P0, this, &MicroBit::onP0ListenerRegisteredEvent, MESSAGE_BUS_LISTENER_IMMEDIATE);
-    messageBus.listen(DEVICE_ID_MESSAGE_BUS_IGNORED, DEVICE_EVT_ANY, this, &MicroBit::onListenerRemovedEvent);
+    // messageBus.listen(DEVICE_ID_MESSAGE_BUS_IGNORED, DEVICE_EVT_ANY, this, &MicroBit::onListenerRemovedEvent);
 
 #if CONFIG_ENABLED(DMESG_SERIAL_DEBUG) && DEVICE_DMESG_BUFFER_SIZE > 0
     codal_dmesg_set_flush_fn(microbit_dmesg_flush);
