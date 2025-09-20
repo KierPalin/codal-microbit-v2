@@ -7,7 +7,7 @@
     },
     "config": {
         "CAPTOUCH_DEFAULT_CALIBRATION": 3500,
-        "CODAL_DEBUG": "CODAL_DEBUG_ENABLED",
+        "CODAL_DEBUG": 1,
         "CODAL_PROVIDE_PRINTF": 1,
         "CODAL_TIMER_32BIT": 1,
         "CODAL_TIMESTAMP": "uint64_t",
