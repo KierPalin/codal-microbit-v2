@@ -385,12 +385,12 @@ void MicroBit::onListenerRegisteredEvent(Event evt)
   */
 void MicroBit::onListenerRemovedEvent(Event evt)
 {
-    switch(evt.value)
-    {
-        case DEVICE_ID_SYSTEM_LEVEL_DETECTOR:
-        audio.levelSPL->listenerRemoved();
-        break;
-    }
+    // switch(evt.value)
+    // {
+    //     case DEVICE_ID_SYSTEM_LEVEL_DETECTOR:
+    //     audio.levelSPL->listenerRemoved();
+    //     break;
+    // }
 }
 
 /**
