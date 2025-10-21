@@ -26,7 +26,7 @@
         "DEVICE_DEFAULT_PULLMODE":"PullMode::Down",
         "DEVICE_PANIC_HEAP_FULL":1,
         "DMESG_SERIAL_DEBUG":0,
-        "CODAL_DEBUG":"CODAL_DEBUG_DISABLED",
+        "CODAL_DEBUG":"CODAL_DEBUG_ENABLED",
         "DEVICE_USB":0,
         "CODAL_TIMESTAMP":"uint64_t",
         "PROCESSOR_WORD_TYPE":"uint32_t",
