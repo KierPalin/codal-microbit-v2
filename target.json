@@ -60,7 +60,7 @@
     "libraries":[
         {
             "name":"codal-core",
-            "url":"https://github.com/kierpalin/codal-core",
+            "url": "https://github.com/devices-lab/codal-core",
             "branch":"ST7735-fix",
             "type":"git"
         },
