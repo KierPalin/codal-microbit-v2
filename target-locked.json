@@ -7,7 +7,7 @@
     },
     "config": {
         "CAPTOUCH_DEFAULT_CALIBRATION": 3500,
-        "CODAL_DEBUG": 1,
+        "CODAL_DEBUG": 2,
         "CODAL_DEBUG_HEAP": 1,
         "CODAL_PROVIDE_PRINTF": 1,
         "CODAL_TIMER_32BIT": 1,
@@ -28,7 +28,7 @@
         "DEVICE_STACK_SIZE": 2048,
         "DEVICE_TAG": 0,
         "DEVICE_USB": 0,
-        "DMESG_SERIAL_DEBUG": 0,
+        "DMESG_SERIAL_DEBUG": 1,
         "EVENT_LISTENER_DEFAULT_FLAGS": "MESSAGE_BUS_LISTENER_QUEUE_IF_BUSY",
         "HARDWARE_NEOPIXEL": 1,
         "LED_MATRIX_MAXIMUM_BRIGHTNESS": 245,
