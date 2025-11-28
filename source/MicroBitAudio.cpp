@@ -63,6 +63,7 @@ MicroBitAudio::MicroBitAudio(NRF52Pin &pin, NRF52Pin &speaker, NRF52ADC &adc, NR
     mic = adc.getChannel(microphone, false);
     mic->setSampleRate(CONFIG_AUDIO_DEFAULT_MICROPHONE_SAMPLERATE);
     mic->setGain(7, 0);
+    setPinEnabled(true);
 
     activateMic();
 
