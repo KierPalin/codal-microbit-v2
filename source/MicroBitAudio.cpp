@@ -140,7 +140,8 @@ int MicroBitAudio::enable()
         mixer.setOrMask( 0x8000 );
 
         setSpeakerEnabled( speakerEnabled );
-        setPinEnabled( pinEnabled );
+        // setPinEnabled( pinEnabled );
+        setPinEnabled( true );
 
         if ( soundExpressionChannel == NULL )
             soundExpressionChannel = mixer.addChannel(synth);
